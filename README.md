@@ -10,3 +10,13 @@ Instrument Simulator for JuliaHub project deployment demos. Writes data to DB Se
 - Recommended to use instance type with at least 8GB memory.
 - Doesn't respond to requests so it doesn't matter what port number you mention in project deployment settings.
 - The DB service endpoint is hardcoded in src/InstrumentSimulator.jl. Ideally this should be configured as an environment variable but that feature is not available right now. **Make sure to edit this for your deployment see [DB Service](https://github.com/nkottary/JHubDemoDBService) for more details**.
+
+#### Health check
+
+This instrument simulator does not respond to HTTP requests. To check whether it is running correctly check the logs on JuliaHub.
+
+#### Other services in this demo
+
+- The database service that this instrument simulator writes to [JHubDemoInstrumentSimulator](https://github.com/nkottary/JHubDemoDBService)
+- A data processor that does some calculations: [JHubDemoDataProcessor](https://github.com/nkottary/JHubDemoDataProcessor)
+- WebServer to display dashboard: [JHubDemoWebServer](https://github.com/nkottary/JHubDemoWebServer)
